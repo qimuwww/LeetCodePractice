@@ -15,22 +15,34 @@ import "fmt"
 */
 
 func twoSum(nums []int, target int) []int {
-	numMap := make(map[int]int)
-	var index [2]int
+	var (
+		numMap   = make(map[int]int)
+		index int
+		ok    bool
+		value [2]int
+	)
 	for i := 0; i < len(nums); i++ {
+		if index, ok = numMap[nums[i]]; ok {
+			if nums[i]*2 == target {
+				value[0], value[1] = index, i
+				return value[:]
+			}
+		}
 		numMap[nums[i]] = i
-		sub := target - nums[i]
-		if v, ok := numMap[sub]; ok {
-			index[0], index[1] = v, i
-			return index[:]
+		if index, ok = numMap[target-nums[i]]; ok {
+			if index != i {
+				value[0], value[1] = index, i
+				return value[:]
+			}
+
 		}
 	}
 	return nil
 }
 
 func main()  {
-	nums := []int{2, 7, 11, 15}	
-	RetValue := twoSum(nums, 9)
+	nums := []int{3, 3}	
+	RetValue := twoSum(nums, 6)
 	if RetValue != nil {
 		fmt.Println(RetValue[0], RetValue[1])
 	}
