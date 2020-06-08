@@ -1,6 +1,6 @@
-package main
+package twoSum
 
-import "fmt"
+//import "fmt"
 /*
 	Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 
@@ -16,10 +16,10 @@ import "fmt"
 
 func twoSum(nums []int, target int) []int {
 	var (
-		numMap   = make(map[int]int)
-		index int
-		ok    bool
-		value [2]int
+		numMap = make(map[int]int)
+		index  int
+		ok     bool
+		value  [2]int
 	)
 	for i := 0; i < len(nums); i++ {
 		if index, ok = numMap[nums[i]]; ok {
@@ -40,10 +40,12 @@ func twoSum(nums []int, target int) []int {
 	return nil
 }
 
+/*
 func main()  {
-	nums := []int{3, 3}	
+	nums := []int{3, 3}
 	RetValue := twoSum(nums, 6)
 	if RetValue != nil {
 		fmt.Println(RetValue[0], RetValue[1])
 	}
 }
+*/
