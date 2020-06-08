@@ -39,13 +39,3 @@ func twoSum(nums []int, target int) []int {
 	}
 	return nil
 }
-
-/*
-func main()  {
-	nums := []int{3, 3}
-	RetValue := twoSum(nums, 6)
-	if RetValue != nil {
-		fmt.Println(RetValue[0], RetValue[1])
-	}
-}
-*/
