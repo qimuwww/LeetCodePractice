@@ -1,4 +1,4 @@
-package SwapNodesinPairs
+package leetcode
 
 /*
 	Given a linked list, swap every two adjacent nodes and return its head.
@@ -11,6 +11,11 @@ package SwapNodesinPairs
 
 	Given 1->2->3->4, you should return the list as 2->1->4->3.
 */
+
+type ListNode struct {
+	val  int
+	Next *ListNode
+}
 
 func swapPairs(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {

@@ -1,4 +1,4 @@
-package HappyNumber
+package leetcode
 
 /*
 	Write an algorithm to determine if a number n is "happy".
