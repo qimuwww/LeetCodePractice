@@ -15,27 +15,12 @@ package leetcode
 */
 
 func twoSum(nums []int, target int) []int {
-	var (
-		numMap = make(map[int]int)
-		index  int
-		ok     bool
-		value  [2]int
-	)
-	for i := 0; i < len(nums); i++ {
-		if index, ok = numMap[nums[i]]; ok {
-			if nums[i]*2 == target {
-				value[0], value[1] = index, i
-				return value[:]
-			}
+	var numMap = make(map[int]int)
+	for i := range nums {
+		if k, ok := numMap[target-nums[i]]; ok {
+			return []int{k, i}
 		}
 		numMap[nums[i]] = i
-		if index, ok = numMap[target-nums[i]]; ok {
-			if index != i {
-				value[0], value[1] = index, i
-				return value[:]
-			}
-
-		}
 	}
-	return nil
+	return []int{}
 }
